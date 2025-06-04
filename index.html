@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Critters</title>
+    <style>
+        h3 {text-align: center;}
+        div {text-align: center;}
+    </style>
+</head>
+
+<body>
+    <nav>
+        <button class="tablink" onclick="openPage('SelfCare', this, 'red')" id='defaultOpen'>Self Care</button>
+        <button class="tablink" onclick="openPage('WorldCare', this, 'green')">World Care</button>
+        <button class="tablink" onclick="openPage('Settings', this, 'blue')">Settings</button>
+        <button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
+    </nav>
+
+    <div id="SelfCare" class="tabcontent">
+        <fieldset>
+            <legend>Daily Tasks</legend>
+                <input type="checkbox" id="ctask1" name="Task 1" onchange="critterBox(this)">
+                <label for="ctask1" id="ctask1_label"> Task 1 </label>
+                <input type="checkbox" id="ctask2" name="Task 2" onchange="critterBox(this)">
+                <label for="ctask2" id="ctask2_label"> Task 2 </label>
+                <input type="checkbox" id="ctask3" name="Task 3" onchange="critterBox(this)">
+                <label for="ctask3" id="ctask3_label"> Task 3 </label>
+                <div>
+                    <button onclick="newDay()">New Day</button>
+                </div>
+        </fieldset>
+        <div>
+            <p id="critter_lvl">Critter Level: 0</p>
+            <img src="images/critter/kity1.png" alt="Baby Kitten" id="critter_img" style="transform: translate(80px, -15px)">
+            <label for="critter_exp" style="margin-left:-100px">Critter Exp: </label>
+            <progress id="critter_exp" value="0" max="10">0%</progress>
+            <div id="critter_progress" style="margin-left:120px">0/10</div>
+        </div>
+    </div>
+
+    <div id="WorldCare" class="tabcontent">
+        <fieldset>
+            <legend>World Tasks</legend>
+
+            <div>
+                <input type="checkbox" id="wtask1" onchange="worldBox(this)">
+                <label for="wtask1" id="wtask1_label"> Task 1 </label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="wtask2" onchange="worldBox(this)">
+                <label for="wtask2" id="wtask2_label"> Task 2 </label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="wtask3" onchange="worldBox(this)">
+                <label for="wtask3" id="wtask3_label"> Task 3 </label>
+            </div>
+        </fieldset>
+        <div>
+            <p id="world_lvl">World Level: 0</p>
+            <img src="images/planet/planet1.png" alt="Dirty Planet" id="world_img" style="transform: translate(10px, -15px)">
+            <label for="world_exp" style="margin-left:-225px">World Exp:  </label>
+            <progress id="world_exp" value="0" max="100000000"> 0% </progress>
+            <div id="world_progress" style="margin-left:90px"> 0/100000000 </div>
+        </div>
+    </div>
+
+    <div id="Settings" class="tabcontent">
+        <fieldset>
+            <legend>Settings</legend>
+            <button onclick="saveGame()">Save Game</button>
+            <button onclick="resetGame()">Reset Game</button>
+        </fieldset>
+
+    </div>
+
+    <div id="About" class="tabcontent">
+        <fieldset>
+            <legend>About</legend>
+            <p>Who we are and what we do.</p>
+        </fieldset>
+
+    </div>
+    <script src="main.js" charset="utf-8" type="text/javascript"></script>
+</body>
+</html>
